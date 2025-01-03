@@ -1,0 +1,32 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "this is Namaste react learning",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-karmakar/Namaste-React.git"
+  },
+  "bugs": {
+    "url": "https://github.com/s-karmakar/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/s-karmakar/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "broserlist": [
+    "last 2 versions"
+  ]
+}
