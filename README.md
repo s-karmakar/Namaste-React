@@ -2,6 +2,13 @@
 
 # Namaste-React
 
+/\* THE PLAN
+Header Component - Logo - Navbar - Home - About - CART
+Body Component - search container - search bar - search button - Resturant Cards Container - Resturant Cards - Resturant Image - Resturant Name - Resturant Rating - Resturant Cuisines - Resturant Cost for two
+Footer Component - copyrigght - links - address - contact
+
+\*/
+
 ###Doubts
 
 sandbox
@@ -352,3 +359,25 @@ as react is JS behind the scene
 
 seperate files for seperate components
 Folder structure
+this is convention
+all the main code we keep it in src Folder
+all the source code in src
+folder name with smallcase
+React Component name should startv with Capital
+
+make a seperate file for each component
+we can write the whole code into a single file
+
+src/components folder
+keep exact same name of component file for which component is created > also initial letter should be capital for the component file only
+
+never keep any hardcoded data into component file
+like image and logo url
+reslist
+keep it in seperate file like UTILS or Common or Constants
+
+there is 2 type of exports>>
+default export > one default export in one file
+named export > multiple export from one singlee file
+
+
