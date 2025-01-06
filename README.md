@@ -252,3 +252,103 @@ return (
 
 Read array join
 what is CDN or cloudinary
+js array map fiilter reduce
+
+> > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > passing data using props method 1
+
+const ResturantCard = (props) => {
+const { resData } = props; // Destructuring
+return (
+
+<div className="res-card">
+<img
+className="res-logo"
+src={
+"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+resData.info.cloudinaryImageId
+}
+alt="resturant-logo"
+/>
+<h2>{resData.info.name}</h2>
+<h4>Rating:{resData.info.avgRating}</h4>
+<h4>{resData.info.cuisines.join(", ")} </h4>
+<h4>{resData.info.costForTwo}</h4>
+</div>
+);
+};
+
+const Body = () => {
+return (
+
+<div className="body">
+<div className="search">search</div>
+<div className="resturant-cards-container">
+{/_ Passing PROPS => passing arguments to a fn _/}
+<ResturantCard resData={resList[0]} />
+<ResturantCard resData={resList[1]} />
+<ResturantCard resData={resList[2]} />
+<ResturantCard resData={resList[3]} />
+<ResturantCard resData={resList[4]} />
+{/_ <ResturantCard resData={resList[5]} /> _/}
+</div>
+</div>
+);
+};
+
+> > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
+
+## incase of any iteration we must put key as it helps in re-rendering >> if there is any chage of a partucalar card that key helps to identifty that exact element and re render that element only instead of all the elements
+
+## we should not use iteration index means the value of i as key.
+
+const ResturantCard = (props) => {
+const { resData } = props; // Destructuring
+const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
+resData?.info; // Destructuring more inside the destructured object though we could do the same in very first place like this => const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } = props.resData.info;
+
+return (
+
+<div className="res-card">
+<img
+className="res-logo"
+src={
+"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+cloudinaryImageId
+}
+alt="resturant-logo"
+/>
+<h2>{name}</h2>
+<h4>Rating:{avgRating}</h4>
+<h4>{cuisines.join(", ")} </h4>
+<h4>{costForTwo}</h4>
+</div>
+);
+};
+
+const Body = () => {
+return (
+
+<div className="body">
+<div className="search">search</div>
+<div className="resturant-cards-container">
+{/_ Passing PROPS => passing arguments to a fn _/}
+{/_ <ResturantCard resData={resList[0]} /> _/}
+{resList.map((eachRstObj) => (
+<ResturantCard key={eachRstObj?.info?.id} resData={eachRstObj} /> // this Name resData should be the same as the name of the prop in the ResturantCard component..
+// this eachRstObj is the current object in the array that we are iterating over same as resList[0] in the above comment
+// key is a special prop that is used by react to identify each element in the list uniquely..
+))}
+</div>
+</div>
+);
+};
+
+> > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
+
+<<<<<<<<<<<<<<<<<<<< Episode 5 >>>>>>>>>>>>>>>>>>>>
+API data controlling our UI is Config driven UI
+everything we are able to do using react can be done using html css js only
+as react is JS behind the scene
+
+seperate files for seperate components
+Folder structure
