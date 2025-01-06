@@ -159,3 +159,96 @@ root.render(jsxHeadingElement);
 // {JsxHeading()} > function call inside curly braces... as above functions are simple JS functions at the end of the day
 
 ## EP4 Notes
+
+const ResturantCard = () => {
+return (
+
+<div
+className="res-card"
+style={{ width: "200px", height: "300px", border: "1px solid black" }} // inline style using JS Object
+first curly brace to ensure we are writing JS code inside JSX
+2nd curly braces to define the object [ the style of writing js object is inside curly braces] >
+<h2>Resturant Image</h2>
+<h3>Resturant Name</h3>
+</div>
+);
+};
+
+## PROPS
+
+> > > > accessing props>>>>>>
+
+const ResturantCard = (props) => {
+return (
+
+<div className="res-card">
+<img
+        className="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/5af6a9b8069daeb459b9b4f971ac3b0c"
+        alt="resturant-logo"
+      />
+<h2>{props.resName}</h2>
+<h4>Rating: 4.5</h4>
+<h4>{props.cuisines} </h4>
+<h4>Cost for two: 500</h4>
+</div>
+);
+};
+
+> > > accessing props >>>>>
+> > > const ResturantCard = (props) => {
+
+## const { resName, cuisines } = props; // this is object destructuring so that we can write less like props.resname >>>>
+
+## we can use any name in place of props
+
+## but at the time of accessing the values or destructuring we have to give the same name which is passed from the component call like resName or Cusines
+
+return (
+
+<div className="res-card">
+<img
+        className="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/5af6a9b8069daeb459b9b4f971ac3b0c"
+        alt="resturant-logo"
+      />
+<h2>{resName}</h2>
+<h4>Rating: 4.5</h4>
+<h4>{cuisines} </h4>
+<h4>Cost for two: 500</h4>
+</div>
+);
+};
+
+const Body = () => {
+return (
+
+<div className="body">
+<div className="search">search</div>
+<div className="resturant-cards-container">
+{/_ Passing PROPS => passing arguments to a fn _/}
+<ResturantCard
+          resName="meghna Foods"
+          cuisines="North Indian, South Indian, Chinese"
+        />
+<ResturantCard
+          resName="kfc"
+          cuisines="fast food, burgers, fried chicken"
+        />
+<ResturantCard />
+</div>
+</div>
+);
+};
+
+## Config driven UI
+
+## our website is driven by data > which is config from data > which comes from backend > CONFIG DRIVEN UI > the API data is different for diff location for swiggy app... > and as per data the UI gets changed
+
+    ui is powered by data
+        ui layer + data layer
+
+## passing dynamic data from API @1.24 : config driven UI section of namaste react
+
+Read array join
+what is CDN or cloudinary
