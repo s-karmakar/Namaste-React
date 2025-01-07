@@ -2,6 +2,15 @@
 
 # Namaste-React
 
+````markdown
+```plaintext
+
+```
+````
+
+```
+
+
 /\* THE PLAN
 Header Component - Logo - Navbar - Home - About - CART
 Body Component - search container - search bar - search button - Resturant Cards Container - Resturant Cards - Resturant Image - Resturant Name - Resturant Rating - Resturant Cuisines - Resturant Cost for two
@@ -380,4 +389,135 @@ there is 2 type of exports>>
 default export > one default export in one file
 named export > multiple export from one singlee file
 
+## Doubt
 
+            onClick={() => { //why onclick callback fn empty ()
+            const filteredList = resList.filter(
+              (eachRstObj) => eachRstObj.info.avgRating >= 4.5
+            );
+            setlistofResturants(filteredList);
+          }}
+
+whenever a state variable updates >> react components re-renders in UI
+
+react is only good at DOM Operations >
+
+- React uses Reconcilation algo - also known as react fiber
+  - it uses diff algo behind the scene
+- virtual DOm is kind of object representation of actual DOM
+
+React Fiber Architecture
+
+- incremental rendering?
+
+const Body = () => {
+// Local State Variables > keeps the track of the data that is changing within the component
+const [listofResturants, setlistofResturants] = useState(resList);
+
+return (
+
+<div className="body">
+<div className="search">
+<button
+className="filter-btn"
+onClick={() => {
+const filteredList = resList.filter(
+(eachRstObj) => eachRstObj.info.avgRating >= 4.5
+);
+setlistofResturants(filteredList);
+}} >
+Top Rated Restaurant
+</button>
+</div>
+<div className="resturant-cards-container">
+{/_ Passing PROPS => passing arguments to a fn _/}
+{/_ <ResturantCard resData={resList[0]} /> _/}
+{listofResturants.map((eachRstObj) => (
+<ResturantCard key={eachRstObj?.info?.id} resData={eachRstObj} /> // this Name resData should be the same as the name of the prop in the ResturantCard component..
+// this eachRstObj is the current object in the array that we are iterating over same as resList[0] in the above comment
+// key is a special prop that is used by react to identify each element in the list uniquely..
+))}
+</div>
+
+
+);
+};
+
+export default Body;
+
+
+
+```
+
+<<<<<<<<<<<<<Episode 6>>>>>>>>>>>>>
+Microservices vs Monolith
+
+Microservices
+
+- seperation of concern
+- single service
+- they have to interact with each other
+- react project is UI Microservice
+- write different microservice for different microservices depending on the use case
+- all the services can run on their own specific PORTS
+- on port 1234: we can have our UI
+
+- we an deploy diff sercvices to different PORTs > at the end all this PORTS we can map to diff Domain Name
+
+# UI Render From API Data
+
+two approach is here
+
+1.URL Hits/page Loads > API Call(500ms) > Render UI (with data)
+2.URL Hits/page Loads > Render the skeleton > API Call(500ms) > Render UI (with data) [we always use this approasch]
+
+# useEffect Hook
+
+code bellow
+useEffect(() => {
+fetchData();
+console.log("useEffect Called");
+}, []);
+
+const fetchData = async () => {
+const data = await fetch(
+"https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.585698&lng=88.443614&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+);
+const jsonData = await data.json();
+setlistofResturants(
+jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+?.restaurants
+);
+console.log(
+jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+?.restaurants
+);
+};
+
+Doubts
+
+- optional chaining
+- http methods
+- fecth()
+- promises and async await()
+
+CORS Policy
+arrow fn inside return or just outside return
+like [
+const fetchData = async () => {
+const data = await fetch(
+"https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.585698&lng=88.443614&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+);
+};
+
+but bellow code throws error
+const fetchData = async () => {
+return(
+const data = await fetch(
+"https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.585698&lng=88.443614&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+);
+)
+};
+]
+
+## shimmer UI
