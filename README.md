@@ -521,3 +521,24 @@ const data = await fetch(
 ]
 
 ## shimmer UI
+
+# Doubt
+
+- arrow fn
+- callback fn
+
+when to write return statement and when not inside a call back fn
+<button
+className="signIn-btn"
+onClick={() => {
+btnName === "Sign In"
+? setbtnName("Sign Out")
+: setbtnName("Sign In");
+
+              console.log(btnName);
+            }}
+          >
+
+# whenever state variable updates, react trigers a reconcilation > re render the component > it re renders the wholle component but only update the diff
+
+## fetch post call
