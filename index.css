@@ -86,3 +86,12 @@ h3 {
   cursor: pointer;
   width: 100%;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: bisque;
+  width: auto;
+  height: 100px;
+}

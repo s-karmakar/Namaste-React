@@ -4,6 +4,7 @@ import ResturantCard from "./ResturantCard";
 // import { resList } from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 const Body = () => {
   // Local State Variables > keeps the track of the data that is changing within the component
@@ -83,19 +84,20 @@ const Body = () => {
             const filteredList = listofResturants.filter(
               (eachRstObj) => eachRstObj.info.avgRating >= 4.5
             );
-            setlistofResturants(filteredList);
+            setFilteredResturants(filteredList);
           }}
         >
           Top Rated Restaurant
         </button>
       </div>
       <div className="resturant-cards-container">
-        {/* Passing PROPS => passing arguments to a fn */}
-        {/* <ResturantCard resData={resList[0]} /> */}
         {filteredResturants.map((eachRstObj) => (
-          <ResturantCard key={eachRstObj?.info?.id} resData={eachRstObj} /> // this Name  resData should be the same as the name of the prop in the ResturantCard component..
-          // this eachRstObj is the current object in the array that we are iterating over same as resList[0] in the above comment
-          // key is a special prop that is used by react to identify each element in the list uniquely..
+          <Link
+            to={`/resturants/${eachRstObj?.info?.id}`}
+            key={eachRstObj?.info?.id}
+          >
+            <ResturantCard resData={eachRstObj} />
+          </Link>
         ))}
       </div>
     </div>
