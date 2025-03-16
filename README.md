@@ -710,6 +710,7 @@ outlet and routing childrens
 
 const AppLayout = () => {
 return (
+
 <div className="app-layout">
 <Header />
 <Outlet />
@@ -754,3 +755,8 @@ as Link doesnot reload the whole page. it onlye refreshes the component . becaus
 - client side routing - we use this routing in react
 - server side routing
   React uses Client side routing
+
+Learned children Routing
+taking parameter from URL
+useParams
+Dynamic Routing
