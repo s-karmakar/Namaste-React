@@ -1,4 +1,7 @@
+//Class Based component
+
 import React from "react";
+import UserClass from "./UserClass";
 
 const About = () => {
   return (
@@ -9,6 +12,12 @@ const About = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
         tincidunt, nunc nec ultricies bibendum, nunc nunc ultricies nunc, nec
       </p>
+
+      <UserClass
+        name={`subhankar karmakar`}
+        location={`KOLKATA`}
+        contact={`sk1234@gmail.com`}
+      />
     </div>
   );
 };

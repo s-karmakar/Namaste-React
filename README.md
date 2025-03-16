@@ -760,3 +760,27 @@ Learned children Routing
 taking parameter from URL
 useParams
 Dynamic Routing
+
+<<<<<<<<<Episode 8 >>>>>>>>>
+
+Class Based Components
+
+this and super keyword in class component
+
+life cycle
+
+# parent Constructor > parent render > child Constructor > child Render
+
+# parent Constructor > parent render > child Constructor > child Render > child-componentDidMount > parent-componentDidMount
+
+# parent Constructor > parent render > 1stchild Constructor > 1stchild Render > 2ndchild Constructor > 2ndchild Render > 1stchild-componentDidMount > 2ndchild-componentDidMount >parent-componentDidMount
+
+# constructor > render > componentDidMount >
+
+after all the render method DOM gets renders in a single BATCH
+
+why component did mount > to make api calls > its like useEffect hook >
+
+goto react life cycle methods diagram
+
+> https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
