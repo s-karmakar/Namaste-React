@@ -777,6 +777,8 @@ life cycle
 
 # constructor > render > componentDidMount >
 
+# component will unmount is important
+
 after all the render method DOM gets renders in a single BATCH
 
 why component did mount > to make api calls > its like useEffect hook >
@@ -784,3 +786,45 @@ why component did mount > to make api calls > its like useEffect hook >
 goto react life cycle methods diagram
 
 > https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+debugger; keyword in code
+
+Revise episode 8 - : 1:55min : this is component lifeCycle
+
+<<<<<<<<<Episode 9 >>>>>>>>>
+
+custom hooks & single responsiblity principle
+
+Optimizinf
+
+- modularity > single responsiblity principle
+  > Reusable
+  > Maintanable
+  > testable
+
+created custom hook useResturantMent > for fetching the data only
+
+?? online status is not working
+
+- ## large scale app
+
+> chunking/ code spliting/ dynamic bundeling /lazy loading/ code spliting/
+>
+> > break down our app in smaller bundels
+
+lazy Loading
+
+> > //lazy loading
+> > import { lazy, Suspense } from "react";
+> > const Grocerry = lazy(() => import("./components/Grocerry"));
+
+{
+path: "/grocerry",
+element: (
+<Suspense fallback={<div>Loading...</div>}>
+<Grocerry />
+</Suspense>
+),
+}
+
+---

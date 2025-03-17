@@ -5,6 +5,7 @@ import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // Local State Variables > keeps the track of the data that is changing within the component
@@ -12,6 +13,8 @@ const Body = () => {
   const [listofResturants, setlistofResturants] = useState([]);
   const [filteredResturants, setFilteredResturants] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     fetchData();
@@ -39,6 +42,12 @@ const Body = () => {
     //     ?.restaurants
     // );
   };
+
+  // check online status
+
+  // if (onlineStatus === true) {
+  //   return <h1>opps. Looks like your internet is not working</h1>;
+  // }
 
   //conditional rendering
   //   if (listofResturants.length === 0) {
