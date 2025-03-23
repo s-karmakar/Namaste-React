@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import { LOGO_URL } from "./utils/constants";
 import { Link } from "react-router";
-import useOnlineStatus from "./utils/useOnlineStatus"
+import useOnlineStatus from "./utils/useOnlineStatus";
 
 const Header = () => {
   const [btnName, setbtnName] = useState("Sign In");
   return (
-    <div className="header">
+    <div className="header ">
       <div className="logo-container">
         <img className="logo" src={LOGO_URL} alt="logo" />
       </div>
