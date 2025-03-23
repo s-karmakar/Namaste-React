@@ -5,7 +5,7 @@ import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import useOnlineStatus from "./utils/useOnlineStatus"
 
 const Body = () => {
   // Local State Variables > keeps the track of the data that is changing within the component
