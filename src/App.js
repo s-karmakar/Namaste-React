@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import "../index.css";
-import "../index.css";
+import "./index.css";
 import Header from "./Header";
 import Body from "./Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
