@@ -5,7 +5,7 @@ import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
-import useOnlineStatus from "./utils/useOnlineStatus"
+import useOnlineStatus from "./utils/useOnlineStatus";
 
 const Body = () => {
   // Local State Variables > keeps the track of the data that is changing within the component
@@ -61,11 +61,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="search">
+      <div className="search mx-2 px-2 py-2 flex">
         <div className="search-container">
           <input
             type="text"
-            className="search-input"
+            className="search-input border-slate-600 border-2 rounded-xl"
             placeholder="Search for Resturants"
             value={searchValue} // binding the input field with the state variable
             onChange={(e) => {
@@ -73,7 +73,7 @@ const Body = () => {
             }} // updating the state variable with the value of the input field
           />
           <button
-            className="search-btn"
+            className="search-btn mx-3 border-black border-1 bg-pink-200 rounded-lg px-2 py-1 hover:bg-pink-300"
             onClick={() => {
               const fltrResturants = listofResturants.filter((eachRstObj) =>
                 eachRstObj.info.name
@@ -88,7 +88,7 @@ const Body = () => {
         </div>
 
         <button
-          className="filter-btn"
+          className="filter-btn mx-3 border-black border-1 bg-rose-200 rounded-lg px-2 py-1 hover:bg-pink-300"
           onClick={() => {
             const filteredList = listofResturants.filter(
               (eachRstObj) => eachRstObj.info.avgRating >= 4.5
@@ -99,7 +99,7 @@ const Body = () => {
           Top Rated Restaurant
         </button>
       </div>
-      <div className="resturant-cards-container">
+      <div className="resturant-cards-container flex flex-wrap">
         {filteredResturants.map((eachRstObj) => (
           <Link
             to={`/resturants/${eachRstObj?.info?.id}`}

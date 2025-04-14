@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "this is Namaste react learning",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "jest"
   },
   "author": "",
@@ -19,9 +19,10 @@
   },
   "homepage": "https://github.com/s-karmakar/Namaste-React#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "constants-browserify": "^1.0.0",
     "parcel": "^2.13.3",
-    "postcss": "^8.5.3",
+    "postcss": "^8.4.31",
     "process": "^0.11.10",
     "tailwindcss": "^3.4.17"
   },
@@ -30,7 +31,7 @@
     "react-dom": "^19.0.0",
     "react-router": "^7.3.0"
   },
-  "broserlist": [
+  "browserslist": [
     "last 2 versions"
   ]
 }
