@@ -827,4 +827,14 @@ element: (
 ),
 }
 
----
+tailwind css
+
+<<<<<<<<<Episode 11>>>>>>>>>
+
+- Higher order component : is a fn which takes a component and returns a component
+
+-pure component
+
+- controlled component
+- uncontrolled component
+- lifting state up
